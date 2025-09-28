@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 27 September 2025
+  Features:
+    - Added support to the fork of quality mod for space exploration. changes the quality modules to be able to be crafted in the electromagnetic plant
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 26 September 2025
   Features:

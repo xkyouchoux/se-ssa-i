@@ -364,3 +364,15 @@ data.raw.recipe["satellite"].category = "electronics"
 data.raw.recipe["rocket-control-unit"].category = "electronics"
 
 data.raw.recipe["discharge-defense-equipment"].category = "crafting"
+
+if mods["quality-se"] then
+    data.raw.recipe["quality-module"].category = "electronics"
+    data.raw.recipe["quality-module-2"].category = "electronics"
+    data.raw.recipe["quality-module-3"].category = "electronics"
+    data.raw.recipe["quality-module-4"].category = "electronics"
+    data.raw.recipe["quality-module-5"].category = "electronics"
+    data.raw.recipe["quality-module-6"].category = "electronics"
+    data.raw.recipe["quality-module-7"].category = "electronics"
+    data.raw.recipe["quality-module-8"].category = "electronics-with-fluid"
+    data.raw.recipe["quality-module-9"].category = "electronics-with-fluid"
+end
