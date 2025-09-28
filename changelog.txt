@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 28 September 2025
+  Features:
+    - Added support for Krastorio2. Turbo belts are disabled if using Krastorio2 and adds stacking to superior inserters
+    - Added mod settings to disable specific features if wanted.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 27 September 2025
   Features:
