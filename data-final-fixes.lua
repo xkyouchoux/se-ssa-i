@@ -87,6 +87,14 @@ if Krastorio2 then
     add_categories_to_machines({"electronics-with-fluid", "metallurgy-or-assembling", "electronics-or-assembling", }, {"kr-advanced-assembling-machine"})
 end
 
+data.raw.recipe["sulfuric-acid"].category = "chemistry"
+data.raw.recipe["heavy-oil-cracking"].category = "chemistry"
+data.raw.recipe["light-oil-cracking"].category = "chemistry"
+data.raw.recipe["sulfur"].category = "chemistry"
+data.raw.recipe["plastic-bar"].category = "chemistry"
+data.raw.recipe["explosives"].category = "chemistry"
+data.raw.recipe["battery"].category = "chemistry"
+
 -- STACK INSERTER
 
 if STACKING then
@@ -382,12 +390,14 @@ if ELECTROMAGNETIC_PLANT then
         data.raw.recipe["quality-module"].category = "electronics"
         data.raw.recipe["quality-module-2"].category = "electronics"
         data.raw.recipe["quality-module-3"].category = "electronics"
-        data.raw.recipe["quality-module-4"].category = "electronics"
-        data.raw.recipe["quality-module-5"].category = "electronics"
-        data.raw.recipe["quality-module-6"].category = "electronics"
-        data.raw.recipe["quality-module-7"].category = "electronics"
-        data.raw.recipe["quality-module-8"].category = "electronics-with-fluid"
-        data.raw.recipe["quality-module-9"].category = "electronics-with-fluid"
+        if data.raw.recipe["quality-module-4"] then    
+            data.raw.recipe["quality-module-4"].category = "electronics"
+            data.raw.recipe["quality-module-5"].category = "electronics"
+            data.raw.recipe["quality-module-6"].category = "electronics"
+            data.raw.recipe["quality-module-7"].category = "electronics"
+            data.raw.recipe["quality-module-8"].category = "electronics-with-fluid"
+            data.raw.recipe["quality-module-9"].category = "electronics-with-fluid"
+        end
     end
 
     if Krastorio2 then

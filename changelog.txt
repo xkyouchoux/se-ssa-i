@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 28 September 2025
+  Features:
+    - Marks quality incompatible and added a check if quality modules 4-9 does not exist some how.
+    - [k2] Fixed some oil cracking recipes not showing up in advanced chemical plant
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 28 September 2025
   Features:
