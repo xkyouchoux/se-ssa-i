@@ -9,7 +9,8 @@ local function add_categories_to_machines(categories, machines)
 end
 
 local Krastorio2 = mods["Krastorio2"]
-local AAILoaders = mods["aai-loaders"] and not settings.startup["aai-loaders-mode"].value == "graphics-only"
+local AAILoaders = mods["aai-loaders"]
+local AAILoadersGraphicsOnly = settings.startup["aai-loaders-mode"].value == "graphics-only"
 local Quality = mods["quality-se"]
 
 local STACKING = settings.startup["sessai-enable-stacking"].value
@@ -139,7 +140,7 @@ if TURBO_BELTS then
     data.raw.recipe["turbo-underground-belt"].category = "crafting-with-fluid-or-metallurgy"
     data.raw.recipe["turbo-splitter"].category = "crafting-with-fluid-or-metallurgy"
     data.raw.recipe["turbo-loader"].category = "crafting-with-fluid-or-metallurgy"
-    if AAILoaders then
+    if AAILoaders and not AAILoadersGraphicsOnly then
         data.raw.recipe["aai-turbo-loader"].category = "crafting-with-fluid-or-metallurgy"
     end
 else
@@ -208,7 +209,7 @@ end
 if FOUNDRY then
     data.raw["assembling-machine"]["foundry"].crafting_categories = {"metallurgy", "crafting-with-fluid-or-metallurgy", "pressing", "casting"}
 
-    if AAILoaders then
+    if AAILoaders and not AAILoadersGraphicsOnly then
         data.raw.recipe["aai-loader"].category = "crafting-with-fluid-or-metallurgy"
         data.raw.recipe["aai-fast-loader"].category = "crafting-with-fluid-or-metallurgy"
         data.raw.recipe["aai-express-loader"].category = "crafting-with-fluid-or-metallurgy"
@@ -275,7 +276,7 @@ if FOUNDRY then
         data.raw.recipe["express-splitter"].category = "pressing"
         data.raw.recipe["kr-advanced-splitter"].category = "pressing"
         data.raw.recipe["kr-superior-splitter"].category = "pressing"
-        if AAILoaders then
+        if AAILoaders and not AAILoadersGraphicsOnly then
             data.raw.recipe["aai-kr-advanced-loader"].category = "pressing"
             data.raw.recipe["aai-kr-superior-loader"].category = "pressing"
         end

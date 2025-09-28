@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 28 September 2025
+  Features:
+    - [aai loaders] Actually Fixed crash when loading with aai-loaders
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 28 September 2025
   Features:
