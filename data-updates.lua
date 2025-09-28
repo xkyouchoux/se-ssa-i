@@ -1,7 +1,22 @@
 local Krastorio2 = mods["Krastorio2"]
-local AAILoaders = mods["aai-loaders"]
+local AAILoaders = mods["aai-loaders"] and not settings.startup["aai-loaders-mode"].value == "graphics-only"
 
 local util = require("__space-exploration__.data_util")
+
+local prod_bonus = settings.startup["sessai-base-productivity-bonus"].value / 100
+
+local category_map = {
+    ["chemistry-or-cryogenics"] = "chemistry",
+    ["metallurgy-or-assembling"] = "crafting-with-fluid",
+    ["organic-or-assembling"] = "crafting-with-fluid",
+    ["organic-or-chemistry"] = "chemistry",
+    ["electronics-or-assembling"] = "crafting-with-fluid",
+    ["cryogenics-or-assembling"] = "crafting-with-fluid"
+}
+
+for _,recipe in pairs(data.raw.recipe) do
+    if category_map[recipe.category] then recipe.category = category_map[recipe.category] end
+end
 
 -- STACK INSERTERS
 
@@ -167,7 +182,7 @@ end
 -- FOUNDRY
 
 if settings.startup["sessai-enable-foundry"].value then 
-    data.raw["assembling-machine"]["foundry"].effect_receiver.base_effect.productivity = 0.2
+    data.raw["assembling-machine"]["foundry"].effect_receiver.base_effect.productivity = prod_bonus
 
     data.raw.recipe["foundry"].ingredients = {
         {type = "item", name = "se-heavy-composite", amount = 16},
@@ -205,7 +220,7 @@ end
 
 if settings.startup["sessai-enable-electromagnetic-plant"].value then 
     data.raw.item["electromagnetic-plant"].subgroup = "assembling"
-    data.raw["assembling-machine"]["electromagnetic-plant"].effect_receiver.base_effect.productivity = 0.2
+    data.raw["assembling-machine"]["electromagnetic-plant"].effect_receiver.base_effect.productivity = prod_bonus
     data.raw.recipe["electromagnetic-plant"].ingredients = {
         {type = "item", name = "se-holmium-solenoid", amount = 38},
         {type = "item", name = "se-aeroframe-bulkhead", amount = 24},

@@ -9,7 +9,7 @@ local function add_categories_to_machines(categories, machines)
 end
 
 local Krastorio2 = mods["Krastorio2"]
-local AAILoaders = mods["aai-loaders"]
+local AAILoaders = mods["aai-loaders"] and not settings.startup["aai-loaders-mode"].value == "graphics-only"
 local Quality = mods["quality-se"]
 
 local STACKING = settings.startup["sessai-enable-stacking"].value
@@ -73,27 +73,20 @@ for _,recipe in pairs(recipes_to_fix) do
     data.raw.recipe[recipe].additional_categories = {}
 end
 
-add_categories_to_machines({"melting"}, {"chemical-plant"})
+-- chemical-plant cryogenic-plant kr-advanced-chemical-plant se-space-biochemical-laboratory se-space-biochemical-laboratory-grounded
+-- burner-assembling-machine assembling-machine-1 assembling-machine-2 assembling-machine-3 kr-advanced-assembling-machine se-space-assembling-machine se-space-manufactory "se-space-electromagnetics-laboratory"
 
-add_categories_to_machines({"cryogenics", "cryogenics-or-assembling", "chemistry-or-cryogenics"}, {"se-space-biochemical-laboratory", "se-space-biochemical-laboratory-grounded", Krastorio2 and "kr-advanced-chemical-plant"})
+add_categories_to_machines({"melting", "chemistry-or-cryogenics", "organic-or-chemistry"}, {"chemical-plant"})
+
+add_categories_to_machines({"cryogenics", "chemistry-or-cryogenics", "organic-or-chemistry"}, {"se-space-biochemical-laboratory", "se-space-biochemical-laboratory-grounded", Krastorio2 and "kr-advanced-chemical-plant"})
 
 add_categories_to_machines({"crafting-with-fluid-or-metallurgy"}, {"se-space-assembling-machine", "se-space-assembling-machine-grounded", "se-space-manufactory", "se-space-manufactory-grounded", Krastorio2 and "kr-advanced-assembling-machine"})
-add_categories_to_machines({"pressing", "electronics"}, {"burner-assembling-machine", Krastorio2 and "kr-advanced-assembling-machine"})
+add_categories_to_machines({"pressing", "electronics"}, {"burner-assembling-machine", "assembling-machine-1", Krastorio2 and "kr-advanced-assembling-machine"})
+add_categories_to_machines({"crafting-or-electromagnetics", "electronics-with-fluid"}, {"assembling-machine-3", Krastorio2 and "kr-advanced-assembling-machine"})
+add_categories_to_machines({"organic-or-hand-crafting"}, {"assembling-machine-2", Krastorio2 and "kr-advanced-assembling-machine"})
 add_categories_to_machines({"space-manufacturing-or-electromagnetics"}, {"se-space-manufactory"})
 add_categories_to_machines({"space-electromagnetics-or-electromagnetics"}, {"se-space-electromagnetics-laboratory"})
-add_categories_to_machines({"crafting-or-electromagnetics"}, {"assembling-machine-3"})
-
-if Krastorio2 then
-    add_categories_to_machines({"electronics-with-fluid", "metallurgy-or-assembling", "electronics-or-assembling", }, {"kr-advanced-assembling-machine"})
-end
-
-data.raw.recipe["sulfuric-acid"].category = "chemistry"
-data.raw.recipe["heavy-oil-cracking"].category = "chemistry"
-data.raw.recipe["light-oil-cracking"].category = "chemistry"
-data.raw.recipe["sulfur"].category = "chemistry"
-data.raw.recipe["plastic-bar"].category = "chemistry"
-data.raw.recipe["explosives"].category = "chemistry"
-data.raw.recipe["battery"].category = "chemistry"
+add_categories_to_machines({"metallurgy-or-assembling", "organic-or-assembling", "electronics-or-assembling", "cryogenics-or-assembling"}, {Krastorio2 and "kr-advanced-assembling-machine"})
 
 -- STACK INSERTER
 
@@ -189,7 +182,7 @@ end
 -- CRYOGENIC PLANT
 
 if CRYOGENIC_PLANT then
-    data.raw["assembling-machine"]["cryogenic-plant"].crafting_categories = {"chemistry", "cryogenics", "chemistry-or-cryogenics", "melting", "cryogenics-or-assembling", "organic-or-chemistry"}
+    data.raw["assembling-machine"]["cryogenic-plant"].crafting_categories = {"chemistry", "cryogenics", "chemistry-or-cryogenics", "melting", "organic-or-chemistry"}
 
     data.raw.recipe["se-cryonite-lubricant"].category = "cryogenics"
     data.raw.recipe["se-cryonite-crystal"].category = "cryogenics"
@@ -213,7 +206,7 @@ end
 -- FOUNDRY
 
 if FOUNDRY then
-    data.raw["assembling-machine"]["foundry"].crafting_categories = {"metallurgy", "metallurgy-or-assembling", "crafting-with-fluid-or-metallurgy", "pressing", "casting"}
+    data.raw["assembling-machine"]["foundry"].crafting_categories = {"metallurgy", "crafting-with-fluid-or-metallurgy", "pressing", "casting"}
 
     if AAILoaders then
         data.raw.recipe["aai-loader"].category = "crafting-with-fluid-or-metallurgy"
@@ -225,8 +218,6 @@ if FOUNDRY then
     data.raw.recipe["pipe-to-ground"].category = "pressing"
     data.raw.recipe["storage-tank"].category = "pressing"
     data.raw.recipe["pump"].category = "pressing"
-    data.raw.recipe["rail-ramp"].category = "pressing"
-    data.raw.recipe["rail-support"].category = "pressing"
     data.raw.recipe["rail"].category = "pressing"
     data.raw.recipe["concrete"].category = "crafting-with-fluid-or-metallurgy"
     data.raw.recipe["refined-concrete"].category = "crafting-with-fluid-or-metallurgy"
@@ -270,6 +261,11 @@ if FOUNDRY then
     data.raw.recipe["se-cargo-rocket-cargo-pod"].category = "pressing"
     data.raw.recipe["se-cargo-rocket-fuel-tank"].category = "pressing"
 
+    if mods["elevated-rails"] then
+        data.raw.recipe["rail-ramp"].category = "pressing"
+        data.raw.recipe["rail-support"].category = "pressing"
+    end
+
     if Krastorio2 then
         data.raw.recipe["kr-advanced-transport-belt"].category = "pressing"
         data.raw.recipe["kr-superior-transport-belt"].category = "pressing"
@@ -303,6 +299,14 @@ if FOUNDRY then
         data.raw.recipe["kr-imersium-beam"].category = "pressing"
         data.raw.recipe["kr-inserter-parts"].category = "pressing"
         data.raw.recipe["kr-automation-core"].category = "pressing"
+
+        if data.raw.recipe["kr-loader"] then
+            data.raw.recipe["kr-loader"].category = "pressing"
+            data.raw.recipe["kr-fast-loader"].category = "pressing"
+            data.raw.recipe["kr-express-loader"].category = "crafting-with-fluid-or-metallurgy"
+            data.raw.recipe["kr-advanced-loader"].category = "pressing"
+            data.raw.recipe["kr-superior-loader"].category = "pressing"
+        end
     end
 else
     data.raw.technology["foundry"] = nil
@@ -316,7 +320,7 @@ end
 -- ELECTROMAGNETIC PLANT
 
 if ELECTROMAGNETIC_PLANT then
-    data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories = {"electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "crafting-or-electromagnetics", "space-manufacturing-or-electromagnetics", "space-electromagnetics-or-electromagnetics"}
+    data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories = {"electromagnetics", "electronics", "electronics-with-fluid", "crafting-or-electromagnetics", "space-manufacturing-or-electromagnetics", "space-electromagnetics-or-electromagnetics"}
 
     data.raw.recipe["se-addon-power-pole"].category = "electronics"
     data.raw.recipe["se-pylon"].category = "electronics"
@@ -335,7 +339,7 @@ if ELECTROMAGNETIC_PLANT then
     data.raw.recipe["display-panel"].category = "electronics"
     data.raw.recipe["aai-signal-sender"].category = "electronics"
     data.raw.recipe["aai-signal-receiver"].category = "electronics"
-
+    
     data.raw.recipe["se-space-solar-panel"].category = "space-manufacturing-or-electromagnetics"
     data.raw.recipe["se-space-solar-panel-2"].category = "space-manufacturing-or-electromagnetics"
     data.raw.recipe["se-space-solar-panel-3"].category = "space-manufacturing-or-electromagnetics"
