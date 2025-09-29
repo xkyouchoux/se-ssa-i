@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 29 September 2025
+  Features:
+    - Removed requirements for Turbo belts, standalone foundry, standalone em plant, and standalone cryo plant
+    - Removed mod settings to turn disable machines
+    - Added self contained forms of turbo belts, foundry, em plant, and cryo plant (Still must have space age installed but not active)
+    - Should be 0 changes to things already placed/researched
+    - Em plant can craft batteries now
+    - Make sure to remove the standalone machines and turbo belt mods as they are not needed
+---------------------------------------------------------------------------------------------------
+Version: 1.0.7
+Date: 28 September 2025
+  Features:
+    - [aai loaders] fixed error when trying to load without aii-loaders
+---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 28 September 2025
   Features:
