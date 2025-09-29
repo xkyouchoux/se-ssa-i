@@ -1,5 +1,10 @@
 local util = require("__se-ssa-i__.data_util")
 
+table.insert(data.raw.character.character.crafting_categories, "crafting-or-metallurgy")
+table.insert(data.raw.character.character.crafting_categories, "crafting-or-electromagnetics")
+table.insert(data.raw["god-controller"].default.crafting_categories, "crafting-or-metallurgy")
+table.insert(data.raw["god-controller"].default.crafting_categories, "crafting-or-electromagnetics")
+
 util.add_categories_to_machines({
     "crafting-or-metallurgy",
     "crafting-or-electromagnetics",

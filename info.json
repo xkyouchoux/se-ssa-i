@@ -1,6 +1,6 @@
 {
   "name": "se-ssa-i",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "title": "Space Exploration-Standalone Space Age content integration",
   "author": "xkyouchoux",
   "description": "Adds some standalone content: Stack inserters, Turbo belts, Foundry, Electromagnetic plant, and Cryogenic plant. Integrates them into space exploration.",
