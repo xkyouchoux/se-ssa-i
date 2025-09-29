@@ -1,3 +1,5 @@
+local util = require("__space-exploration__.data_util")
+
 data:extend({
     {
         type = "recipe-category",

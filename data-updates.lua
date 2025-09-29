@@ -74,7 +74,7 @@ end
 
 -- TURBO BELTS
 
-if settings.startup["sessai-enable-turbo-belts"].value then 
+if settings.startup["sessai-enable-turbo-belts"].value and not Krastorio2 then 
     data.raw.item["turbo-transport-belt"].subgroup = "transport-belt"
     data.raw.item["turbo-underground-belt"].subgroup = "underground-belt"
     data.raw.item["turbo-splitter"].subgroup = "splitter"

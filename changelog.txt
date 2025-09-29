@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 28 September 2025
+  Features:
+    - [aai loaders stacking filtering] Fixed crash when trying to load with optional dependencies.
+    - [blueprint sandbox] Fixed crash when trying to load with turbo belts disabled/K2 
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 28 September 2025
   Features:

@@ -14,7 +14,7 @@ local AAILoadersGraphicsOnly = settings.startup["aai-loaders-mode"].value == "gr
 local Quality = mods["quality-se"]
 
 local STACKING = settings.startup["sessai-enable-stacking"].value
-local TURBO_BELTS = settings.startup["sessai-enable-turbo-belts"].value
+local TURBO_BELTS = settings.startup["sessai-enable-turbo-belts"].value and not Krastorio2
 local CRYOGENIC_PLANT = settings.startup["sessai-enable-cryogenic-plant"].value
 local FOUNDRY = settings.startup["sessai-enable-foundry"].value
 local ELECTROMAGNETIC_PLANT = settings.startup["sessai-enable-electromagnetic-plant"].value
@@ -142,41 +142,6 @@ if TURBO_BELTS then
     data.raw.recipe["turbo-loader"].category = "crafting-with-fluid-or-metallurgy"
     if AAILoaders and not AAILoadersGraphicsOnly then
         data.raw.recipe["aai-turbo-loader"].category = "crafting-with-fluid-or-metallurgy"
-    end
-else
-    data.raw.technology["turbo-transport-belt"] = nil
-
-    data.raw.recipe["turbo-transport-belt"] = nil
-    data.raw.item["turbo-transport-belt"] = nil
-    data.raw["transport-belt"]["turbo-transport-belt"] = nil
-    if Quality then data.raw.recipe["turbo-transport-belt-recycling"] = nil end
-    if not Krastorio2 then data.raw["transport-belt"]["express-transport-belt"].next_upgrade = nil else data.raw.recipe["kr-crush-turbo-transport-belt"] = nil end
-
-    data.raw.recipe["turbo-underground-belt"] = nil
-    data.raw.item["turbo-underground-belt"] = nil
-    data.raw["underground-belt"]["turbo-underground-belt"] = nil
-    if Quality then data.raw.recipe["turbo-underground-belt-recycling"] = nil end
-    if not Krastorio2 then data.raw["underground-belt"]["express-underground-belt"].next_upgrade = nil else data.raw.recipe["kr-crush-turbo-underground-belt"] = nil end
-
-    data.raw.recipe["turbo-splitter"] = nil
-    data.raw.item["turbo-splitter"] = nil
-    data.raw.splitter["turbo-splitter"] = nil
-    if Quality then data.raw.recipe["turbo-splitter-recycling"] = nil end
-    if not Krastorio2 then data.raw["splitter"]["express-splitter"].next_upgrade = nil else data.raw.recipe["kr-crush-turbo-splitter"] = nil end
-
-    data.raw.recipe["turbo-loader"] = nil
-    data.raw.item["turbo-loader"] = nil
-    data.raw.loader["turbo-loader"] = nil
-    if Quality then data.raw.recipe["turbo-loader-recycling"] = nil end
-    if not Krastorio2 then data.raw.loader["express-loader"].next_upgrade = nil else data.raw.recipe["kr-crush-turbo-loader"] = nil end
-
-    if AAILoaders then 
-        data.raw.technology["aai-turbo-loader"] = nil
-        data.raw.recipe["aai-turbo-loader"] = nil
-        data.raw.item["aai-turbo-loader"] = nil
-        data.raw["loader-1x1"]["aai-turbo-loader"] = nil
-    if Quality then data.raw.recipe["aai-turbo-loader-recycling"] = nil end
-    if not Krastorio2 then data.raw["loader-1x1"]["aai-express-loader"].next_upgrade = nil else data.raw.recipe["kr-crush-aai-turbo-loader"] = nil end
     end
 end
 
@@ -425,4 +390,75 @@ else
     data.raw["assembling-machine"]["electromagnetic-plant"] = nil
     if Quality then data.raw.recipe["electromagnetic-plant-recycling"] = nil end
     if Krastorio2 then data.raw.recipe["kr-crush-electromagnetic-plant"] = nil end
+end
+
+if not TURBO_BELTS then
+    data.raw.technology["turbo-transport-belt"] = nil
+
+    data.raw.item["turbo-transport-belt"] = nil
+    data.raw.recipe["turbo-transport-belt"] = nil
+    data.raw["transport-belt"]["turbo-transport-belt"] = nil
+    data.raw.recipe["kr-crush-turbo-transport-belt"] = nil
+    if data.raw.recipe["turbo-transport-belt-recycling"] then data.raw.recipe["turbo-transport-belt-recycling"] = nil end
+
+    if not Krastorio2 then data.raw["transport-belt"]["express-transport-belt"].next_upgrade = nil end
+
+    data.raw.item["turbo-underground-belt"] = nil
+    data.raw.recipe["turbo-underground-belt"] = nil
+    data.raw["underground-belt"]["turbo-underground-belt"] = nil
+    data.raw.recipe["kr-crush-turbo-underground-belt"] = nil
+    if data.raw.recipe["turbo-underground-belt-recycling"] then data.raw.recipe["turbo-underground-belt-recycling"] = nil end
+    if not Krastorio2 then data.raw["underground-belt"]["express-underground-belt"].next_upgrade = nil end
+
+    data.raw.item["turbo-splitter"] = nil
+    data.raw.recipe["turbo-splitter"] = nil
+    data.raw["splitter"]["turbo-splitter"] = nil
+    data.raw.recipe["kr-crush-turbo-splitter"] = nil
+    if data.raw.recipe["turbo-splitter-recycling"] then data.raw.recipe["turbo-splitter-recycling"] = nil end
+    if not Krastorio2 then data.raw["splitter"]["express-splitter"].next_upgrade = nil end
+
+    data.raw.item["turbo-loader"] = nil
+    data.raw.recipe["turbo-loader"] = nil
+    data.raw["loader"]["turbo-loader"] = nil
+    data.raw.recipe["kr-crush-turbo-loader"] = nil
+    if data.raw.recipe["turbo-loader-recycling"] then data.raw.recipe["turbo-loader-recycling"] = nil end
+    if data.raw.recipe["bpsb-turbo-loader"] then data.raw.recipe["bpsb-turbo-loader"] = nil end
+    if not Krastorio2 then data.raw["loader"]["express-loader"].next_upgrade = nil end
+    
+    if AAILoaders and data.raw.item["aai-turbo-loader"] then
+        data.raw.technology["aai-turbo-loader"] = nil
+
+        data.raw.item["aai-turbo-loader"] = nil
+        data.raw.recipe["aai-turbo-loader"] = nil
+        data.raw["loader-1x1"]["aai-turbo-loader"] = nil
+        data.raw.recipe["kr-crush-aai-turbo-loader"] = nil
+        if data.raw.recipe["aai-turbo-loader-recycling"] then data.raw.recipe["aai-turbo-loader-recycling"] = nil end
+        if not Krastorio2 then data.raw["loader-1x1"]["aai-express-loader"].next_upgrade = nil end
+    end
+
+    if mods["aai-loaders-stacking-filtering"] then
+        if data.raw.technology["aai-turbo-loader-stacking"] then data.raw.technology["aai-turbo-loader-stacking"] = nil end
+
+        if data.raw.recipe["aai-turbo-loader-stacking"] then
+            data.raw.item["aai-turbo-loader-stacking"] = nil
+            data.raw.recipe["aai-turbo-loader-stacking"] = nil
+            data.raw["loader-1x1"]["aai-turbo-loader-stacking"] = nil
+            data.raw.recipe["kr-crush-aai-turbo-loader-stacking"] = nil
+            if data.raw.recipe["aai-turbo-loader-stacking-recycling"] then data.raw.recipe["aai-turbo-loader-stacking-recycling"] = nil end
+        end
+        if data.raw.recipe["aai-turbo-loader-lane-filtering"] then
+            data.raw.item["aai-turbo-loader-lane-filtering"] = nil
+            data.raw.recipe["aai-turbo-loader-lane-filtering"] = nil
+            data.raw["loader-1x1"]["aai-turbo-loader-lane-filtering"] = nil
+            data.raw.recipe["kr-crush-aai-turbo-loader-lane-filtering"] = nil
+            if data.raw.recipe["aai-turbo-loader-lane-filtering-recycling"] then data.raw.recipe["aai-turbo-loader-lane-filtering-recycling"] = nil end
+        end
+        if data.raw.recipe["aai-turbo-loader-stacking-lane-filtering"] then
+            data.raw.item["aai-turbo-loader-stacking-lane-filtering"] = nil
+            data.raw.recipe["aai-turbo-loader-stacking-lane-filtering"] = nil
+            data.raw["loader-1x1"]["aai-turbo-loader-stacking-lane-filtering"] = nil
+            data.raw.recipe["kr-crush-aai-turbo-loader-stacking-lane-filtering"] = nil
+            if data.raw.recipe["aai-turbo-loader-stacking-lane-filtering-recycling"] then data.raw.recipe["aai-turbo-loader-stacking-lane-filtering-recycling"] = nil end
+        end
+    end
 end
