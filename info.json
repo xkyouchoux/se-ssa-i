@@ -12,6 +12,7 @@
     "? elevated-rails",
     "? Krastorio2 >= 2.0.8",
     "? quality-se",
+    "! TurboBelt",
     "! um-standalone-space-age-lib",
     "! space-age"],
   "space_travel_required": true,

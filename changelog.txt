@@ -7,7 +7,7 @@ Date: 29 September 2025
     - Added self contained forms of turbo belts, foundry, em plant, and cryo plant (Still must have space age installed but not active)
     - Should be 0 changes to things already placed/researched
     - Em plant can craft batteries now
-    - Make sure to remove the standalone machines and turbo belt mods as they are not needed
+    - Make sure to remove the standalone machines and turbo belt mods as they are incompatible
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 28 September 2025

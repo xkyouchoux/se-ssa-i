@@ -2,14 +2,6 @@ if not mods["Krastorio2"] then return end
 
 local util = require("__se-ssa-i__.data_util")
 
-data.raw.recipe["cryogenic-plant"].ingredients = {
-    {type = "item", name = "refined-concrete", amount = 10},
-    {type = "item", name = "chemical-plant", amount = 1},
-    {type = "item", name = "processing-unit", amount = 8},
-    {type = "item", name = "steel-plate", amount = 20},
-    {type = "item", name = "kr-glass", amount = 16}
-}
-
 data.raw["assembling-machine"]["cryogenic-plant"].module_slots = 3
 
 data.raw["inserter"]["kr-superior-inserter"].wait_for_full_stack = true

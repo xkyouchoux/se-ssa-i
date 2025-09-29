@@ -89,7 +89,7 @@ data:extend({
         {type = "item", name = "chemical-plant", amount = 1},
         {type = "item", name = "processing-unit", amount = 8},
         {type = "item", name = "steel-plate", amount = 20},
-        {type = "item", name = "glass", amount = 16}
+        {type = "item", name = mods["Krastorio2"] and "kr-glass" or "glass", amount = 16}
         },
         energy_required = 10,
         results = {{type="item", name="cryogenic-plant", amount=1}}
