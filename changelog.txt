@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 29 September 2025
+  Features:
+    - Removed foundry, em plant, and cryoplant from mod and standalone froundry, em plant, and cryo plant as dependencies again.
+    - Still adds turbo belts that are disabled if using k2.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 29 September 2025
   Features:

@@ -26,4 +26,10 @@ function result.remove_category_from_machines(category, machines)
     end
 end
 
+function result.add_stacking_to_drill(name)
+    if data.raw["mining-drill"][name] then
+        data.raw["mining-drill"][name]["drops_full_belt_stacks"] = true
+    end
+end
+
 return result

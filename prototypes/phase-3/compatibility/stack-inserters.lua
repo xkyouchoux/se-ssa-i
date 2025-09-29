@@ -1,8 +1,5 @@
 local util = require("__space-exploration__.data_util")
 
-data.raw["mining-drill"]["area-mining-drill"]["drops_full_belt_stacks"] = true
-data.raw["mining-drill"]["se-core-miner-drill"]["drops_full_belt_stacks"] = true
-
 if not mods["aai-loaders-stacking-filtering"] then
     for _, loader in pairs(data.raw["loader-1x1"]) do
         loader.max_belt_stack_size = data.raw["inserter"]["stack-inserter"].max_belt_stack_size
@@ -11,16 +8,6 @@ if not mods["aai-loaders-stacking-filtering"] then
     end
 end
 
-data.raw.item["stack-inserter"].order = "g[stack-inserter]"
-
-data.raw.recipe["stack-inserter"].ingredients = {
-    {type = "item", name = "bulk-inserter", amount = 1},
-    {type = "item", name = "processing-unit", amount = 1},
-    {type = "item", name = "se-aeroframe-pole", amount = 1},
-    {type = "item", name = "se-vitamelange-extract", amount = 2},   
-}
-
-data.raw.technology["stack-inserter"].prerequisites = {"se-biological-science-pack-1", "bulk-inserter", "se-aeroframe-pole"}
 data.raw.technology["stack-inserter"].unit.count = 200
 data.raw.technology["stack-inserter"].unit.ingredients = {
     {"automation-science-pack", 1},
@@ -33,6 +20,8 @@ data.raw.technology["stack-inserter"].unit.ingredients = {
     {"se-astronomic-science-pack-1", 1},
     {"se-biological-science-pack-1", 1},
 }
+
+data.raw.technology["stack-inserter"].prerequisites = {"se-biological-science-pack-1", "bulk-inserter", "se-aeroframe-pole"}
 
 data.raw.technology["transport-belt-capacity-1"].prerequisites = {"se-biological-science-pack-2", "se-astronomic-science-pack-2", "stack-inserter"}
 data.raw.technology["transport-belt-capacity-1"].unit.count = 250

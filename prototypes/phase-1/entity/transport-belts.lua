@@ -43,12 +43,7 @@ local tungsten_belt_animation_set =
 
 meld(tungsten_belt_animation_set, belt_reader_gfx)
 
-data.raw["transport-belt"]["express-transport-belt"].next_upgrade = "turbo-transport-belt";
-data.raw["underground-belt"]["express-underground-belt"].next_upgrade = "turbo-underground-belt";
-data.raw["splitter"]["express-splitter"].next_upgrade = "turbo-splitter";
-
-data:extend
-{
+local transport_belts = {
     {
         type = "transport-belt",
         name = "turbo-transport-belt",
@@ -373,3 +368,11 @@ data:extend
         default_output_right_condition = { first = {type="virtual", name="signal-O"}, comparator=">", second=0},
     }
 }
+
+if not mods["Krastorio2"] then
+    data.raw["transport-belt"]["express-transport-belt"].next_upgrade = "turbo-transport-belt"
+    data.raw["underground-belt"]["express-underground-belt"].next_upgrade = "turbo-underground-belt"
+    data.raw["splitter"]["express-splitter"].next_upgrade = "turbo-splitter"
+
+    data:extend{transport_belts}
+end
