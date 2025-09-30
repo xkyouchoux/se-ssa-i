@@ -1,11 +1,1 @@
-require("prototypes.phase-1.entity.entities")
-require("prototypes.phase-1.entity.transport-belts")
-require("prototypes.phase-1.entity.explosions")
-require("prototypes.phase-1.particles")
-require("prototypes.phase-1.entity.remnants")
-require("prototypes.phase-1.item")
-require("prototypes.phase-1.recipe")
-require("prototypes.phase-1.categories.recipe-category")
-require("prototypes.phase-1.technology")
-
-require("prototypes.phase-1.compatibility.aai-loaders")
+require("prototypes.phase-1.recipe-category")

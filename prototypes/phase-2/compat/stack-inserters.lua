@@ -1,8 +1,6 @@
-local util = require("__space-exploration__.data_util")
+local util = require("__se-ssa-i__.data_util")
 
 util.add_stacking_to_drill("area-mining-drill")
-util.add_stacking_to_drill("kr-electric-mining-drill-mk3")
-util.add_stacking_to_drill("kr-quarry-drill")
 util.add_stacking_to_drill("se-core-miner-drill")
 
 data.raw.item["stack-inserter"].order = "g[stack-inserter]"

@@ -2,8 +2,13 @@
 Version: 1.1.2
 Date: 29 September 2025
   Features:
-    - Removed foundry, em plant, and cryoplant from mod and standalone froundry, em plant, and cryo plant as dependencies again.
-    - Still adds turbo belts that are disabled if using k2.
+    - Rewrote (again)
+    - Stack Inserters: requires stack inserter mod
+    - Foundry: requires standalone foundry mod
+    - Electromagnetic Plant: requires standalone electromagnetic plant mod
+    - Cryogenic Plant: requires standalone cryogenic plant mod
+    - Turbo Belts: optional dependency to the turbo belts mod
+    - [k2] Enabled stacking support for mining drill mk3 and quarry drill
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 29 September 2025

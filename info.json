@@ -1,9 +1,9 @@
 {
   "name": "se-ssa-i",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "title": "Space Exploration-Standalone Space Age content integration",
   "author": "xkyouchoux",
-  "description": "Adds turbo belts along with ",
+  "description": "Has support for stack inserters, turbo belts, foundry, electromagnetic plant, and cryogenic plant. Requires space exploration and has support for krastorio2",
   "dependencies": [
     "base >= 2.0.0",
     "space-exploration >= 0.7.25",
@@ -11,12 +11,8 @@
     "um-standalone-foundry",
     "um-standalone-electromagnetic-plant",
     "um-standalone-cryogenic-plant",
-    "? aai-loaders",
-    "? elevated-rails",
     "? Krastorio2 >= 2.0.8",
-    "? quality-se",
-    "! space-age",
-    "! TurboBelt"],
+    "! space-age"],
   "space_travel_required": true,
   "freezing_required": true,
   "factorio_version": "2.0"
