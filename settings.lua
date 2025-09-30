@@ -5,5 +5,11 @@ data:extend({
         setting_type = "startup",
         default_value = 20,
         allowed_values = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100}
+    },
+    {
+        type = "bool-setting",
+        name = "sessai-space-age-casting-recipes",
+        setting_type = "startup",
+        default_value = false,
     }
 })

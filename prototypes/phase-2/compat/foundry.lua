@@ -13,12 +13,16 @@ data.raw.recipe["foundry"].ingredients = {
 
 data.raw.technology["foundry"].prerequisites = {"se-heavy-composite", "se-aeroframe-bulkhead"}
 data.raw.technology["foundry"].order = "e-g"
-data.raw.technology["foundry"].effects = {
-    {
-        type = "unlock-recipe",
-        recipe = "foundry"
+
+if not settings.startup["sessai-space-age-casting-recipes"].value then
+    data.raw.technology["foundry"].effects = {
+        {
+            type = "unlock-recipe",
+            recipe = "foundry"
+        }
     }
-}
+end
+
 data.raw.technology["foundry"].unit.count = 500
 data.raw.technology["foundry"].unit.time = 60
 data.raw.technology["foundry"].unit.ingredients = {

@@ -69,18 +69,20 @@ util.set_category_for_recipes("pressing", pressing_recipes)
 
 util.set_category_for_recipes("crafting-with-fluid-or-metallurgy", crafting_with_fluid_or_metallurgy_recipes)
 
-data.raw.fluid["molten-iron"].hidden = true
-data.raw.fluid["molten-copper"].hidden = true
+if not settings.startup["sessai-space-age-casting-recipes"].value then
+    data.raw.fluid["molten-iron"].hidden = true
+    data.raw.fluid["molten-copper"].hidden = true
 
-data.raw.recipe["casting-pipe"].hidden = true
-data.raw.recipe["casting-pipe-to-ground"].hidden = true
-data.raw.recipe["iron-ore-melting"].hidden = true
-data.raw.recipe["copper-ore-melting"].hidden = true
-data.raw.recipe["casting-iron"].hidden = true
-data.raw.recipe["casting-copper"].hidden = true
-data.raw.recipe["casting-steel"].hidden = true
-data.raw.recipe["casting-iron-gear-wheel"].hidden = true
-data.raw.recipe["casting-iron-stick"].hidden = true
-data.raw.recipe["casting-low-density-structure"].hidden = true
-data.raw.recipe["concrete-from-molten-iron"].hidden = true
-data.raw.recipe["casting-copper-cable"].hidden = true
+    data.raw.recipe["casting-pipe"].hidden = true
+    data.raw.recipe["casting-pipe-to-ground"].hidden = true
+    data.raw.recipe["iron-ore-melting"].hidden = true
+    data.raw.recipe["copper-ore-melting"].hidden = true
+    data.raw.recipe["casting-iron"].hidden = true
+    data.raw.recipe["casting-copper"].hidden = true
+    data.raw.recipe["casting-steel"].hidden = true
+    data.raw.recipe["casting-iron-gear-wheel"].hidden = true
+    data.raw.recipe["casting-iron-stick"].hidden = true
+    data.raw.recipe["casting-low-density-structure"].hidden = true
+    data.raw.recipe["concrete-from-molten-iron"].hidden = true
+    data.raw.recipe["casting-copper-cable"].hidden = true
+end
