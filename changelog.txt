@@ -1,4 +1,10 @@
-
+Version: 1.2.1
+Date: 1 October 2025
+  Changes:
+    - Some locale changes
+  Bug fixes:
+    - [k2] Fixed cryogenic plant still having 6 module slots instead of 3
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 1 October 2025
   Features:

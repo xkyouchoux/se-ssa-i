@@ -4,7 +4,7 @@ data.raw.item["cryogenic-plant"].order = "e[chemical-plant]-a[cryogenic-plant]"
 data.raw.item["cryogenic-plant"].subgroup = "chemistry"
 data.raw.item["cryogenic-plant"].stack_size = 10
 
-data.raw["assembling-machine"]["cryogenic-plant"].module_slots = Krastorio2 and 3 or 6
+data.raw["assembling-machine"]["cryogenic-plant"].module_slots = mods["Krastorio2"] and 3 or 6
 
 data.raw.recipe["cryogenic-plant"].category = "crafting"
 data.raw.recipe["cryogenic-plant"].ingredients = {
