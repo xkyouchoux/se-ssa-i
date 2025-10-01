@@ -26,6 +26,12 @@ util.add_categories_to_machines({
     "se-space-manufactory-grounded"
 })
 
+util.add_categories_to_machines({"carbon-casting"},{
+	"se-casting-machine",
+	"se-thermodynamics-laboratory",
+	"se-thermodynamics-laboratory-grounded"
+})
+
 util.add_categories_to_machines({
     "crafting-or-electromagnetics",
 }, {
@@ -131,4 +137,8 @@ util.set_category_for_recipes("crafting-with-fluid-or-metallurgy", {
 
 	"aai-express-loader", -- aai-loaders
     "aai-turbo-loader", -- aai-loaders
+})
+
+util.set_category_for_recipes("carbon-casting", {
+	"se-steel-ingot"
 })

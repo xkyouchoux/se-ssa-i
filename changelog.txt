@@ -1,5 +1,16 @@
 
-Version: 1.1.2
+Version: 1.2.0
+Date: 1 October 2025
+  Features:
+    - [Breaking] This is a breaking release. The mod should not change much after this, only to add features.
+    - Removed the ingot -> plate recipes from the foundry
+    - Added casting recipes using molten copper and iron from space exploration for most copper and iron related intermediates and removed the item recipes from the foundry
+    - Supports base, space exploration, and krastorio2 intermediates, pipes, and concrete
+    - Foundry can do carbonless steel casting now with the idea its so advanced and hot it doesnt need carbon to make steel
+    - Recipes were balanced around a 25 molten iron/copper per plate and 50 per steel plate (35 when using krastorio 2) cost
+    - Removes the space age molten fluids, ore to molten, and molten to plate recipes from the standalone foundry mod and migrates the fluids to the splace exploration molten fluids
+---------------------------------------------------------------------------------------------------
+Version: 1.1.3
 Date: 29 September 2025
   Features:
     - Added mod setting to unhide the space age casting recipes

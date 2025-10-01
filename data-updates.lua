@@ -1,6 +1,6 @@
-require("prototypes.phase-2.compat.Krastorio2")
 require("prototypes.phase-2.compat.stack-inserters")
 require("prototypes.phase-2.compat.foundry")
 require("prototypes.phase-2.compat.electromagnetic-plant")
 require("prototypes.phase-2.compat.cryogenic-plant")
 require("prototypes.phase-2.compat.turbo-belts")
+require("prototypes.phase-2.compat.Krastorio2")

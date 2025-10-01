@@ -1,6 +1,10 @@
 data:extend({
     {
         type = "recipe-category",
+        name = "carbon-casting"
+    },
+    {
+        type = "recipe-category",
         name = "chemistry-or-electromagnetics"
     },
     {

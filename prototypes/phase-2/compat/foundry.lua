@@ -14,14 +14,96 @@ data.raw.recipe["foundry"].ingredients = {
 data.raw.technology["foundry"].prerequisites = {"se-heavy-composite", "se-aeroframe-bulkhead"}
 data.raw.technology["foundry"].order = "e-g"
 
-if not settings.startup["sessai-space-age-casting-recipes"].value then
-    data.raw.technology["foundry"].effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "foundry"
-        }
+data.raw.technology["foundry"].effects = {
+    {
+        type = "unlock-recipe",
+        recipe = "foundry"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-se-steel-ingot"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-pipe"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-pipe-to-ground"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-copper-cable"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-iron-gear-wheel"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-iron-stick"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-barrel"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-motor"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-engine-unit"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-low-density-structure"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-se-material-testing-pack"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "concrete-from-molten-iron"
     }
-end
+}
+
+data.raw.recipe["casting-pipe"].ingredients = {
+    {type = "fluid", name = "se-molten-iron", amount = util.get_iron_cost(1), fluidbox_multiplier = 10},
+}
+
+data.raw.recipe["casting-pipe-to-ground"].ingredients = {
+    {type = "item", name = "pipe", amount = 10},
+    {type = "fluid", name = "se-molten-iron", amount = util.get_iron_cost(5), fluidbox_multiplier = 10},
+}
+
+data.raw.recipe["casting-copper-cable"].ingredients = {
+    {type = "fluid", name = "se-molten-copper", amount = util.get_copper_cost(1), fluidbox_multiplier = 10},
+}
+
+data.raw.recipe["concrete-from-molten-iron"].ingredients = {
+    {type = "fluid", name = "se-molten-iron", amount = util.get_iron_cost(1)},
+    {type = "item", name = "stone-brick", amount = 5},
+    {type = "item", name = util.get_sand(), amount = 10},
+    {type = "fluid", name = "water", amount = 100},
+}
+
+data.raw.recipe["casting-iron-gear-wheel"].ingredients = {
+    {type = "fluid", name = "se-molten-iron", amount = util.get_iron_cost(2), fluidbox_multiplier = 10},
+}
+
+data.raw.recipe["casting-iron-stick"].ingredients = {
+    {type = "fluid", name = "se-molten-iron", amount = util.get_iron_cost(2), fluidbox_multiplier = 10},
+}
+
+data.raw.recipe["casting-low-density-structure"].results[1].amount = 2
+data.raw.recipe["casting-low-density-structure"].ingredients = {
+    {type = "item", name = "plastic-bar", amount = 10},
+    {type = "item", name = util.get_glass(), amount = 10},
+    {type = "fluid", name = "se-molten-iron", amount = util.get_iron_cost_for_steel(5)},
+    {type = "fluid", name = "se-molten-copper", amount = util.get_copper_cost(10)},
+}
 
 data.raw.technology["foundry"].unit.count = 500
 data.raw.technology["foundry"].unit.time = 60

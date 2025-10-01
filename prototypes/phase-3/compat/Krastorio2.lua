@@ -33,8 +33,8 @@ local pressing_recipes = {
     "kr-superior-splitter",
     "aai-kr-advanced-loader",
     "aai-kr-superior-loader",
-    "kr-steel-pipe",
-    "kr-steel-pipe-to-ground",
+    -- "kr-steel-pipe",
+    -- "kr-steel-pipe-to-ground",
     "kr-big-storage-tank",
     "kr-huge-storage-tank",
     "kr-steel-pump",
@@ -44,13 +44,13 @@ local pressing_recipes = {
     "kr-electric-mining-drill-mk3",
     "kr-quarry-drill",
     "kr-mineral-water-pumpjack",
-    "kr-steel-gear-wheel",
+    -- "kr-steel-gear-wheel",
     "kr-imersium-gear-wheel",
-    "kr-iron-beam",
-    "kr-steel-beam",
+    -- "kr-iron-beam",
+    -- "kr-steel-beam",
     "kr-imersium-beam",
-    "kr-inserter-parts",
-    "kr-automation-core",
+    -- "kr-inserter-parts",
+    -- "kr-automation-core",
     "kr-loader",
     "kr-fast-loader",
     "kr-advanced-loader",
@@ -88,3 +88,45 @@ util.set_category_for_recipes("crafting-with-fluid-or-metallurgy", crafting_with
 util.set_category_for_recipes("electronics", electronics_recipes)
 util.set_category_for_recipes("electronics-with-fluid", electronics_with_fluid_recipes)
 util.set_category_for_recipes("chemistry-or-electromagnetics", chemistry_or_electromagnetics_recipes)
+
+util.update_casting_recipe(
+    "kr-steel-pipe",
+    "casting-kr-steel-pipe",
+    util.sub_icons(data.raw.item["kr-steel-pipe"].icon, data.raw.fluid["se-molten-iron"].icon)
+)
+
+util.update_casting_recipe(
+    "kr-steel-pipe-to-ground",
+    "casting-kr-steel-pipe-to-ground",
+    util.sub_icons(data.raw.item["kr-steel-pipe-to-ground"].icon, data.raw.fluid["se-molten-iron"].icon)
+)
+
+util.update_casting_recipe(
+    "kr-steel-gear-wheel",
+    "casting-kr-steel-gear-wheel",
+    util.sub_icons(data.raw.item["kr-steel-gear-wheel"].icon, data.raw.fluid["se-molten-iron"].icon)
+)
+
+util.update_casting_recipe(
+    "kr-iron-beam",
+    "casting-kr-iron-beam",
+    util.sub_icons(data.raw.item["kr-iron-beam"].icon, data.raw.fluid["se-molten-iron"].icon)
+)
+
+util.update_casting_recipe(
+    "kr-steel-beam",
+    "casting-kr-steel-beam",
+    util.sub_icons(data.raw.item["kr-steel-beam"].icon, data.raw.fluid["se-molten-iron"].icon)
+)
+
+util.update_casting_recipe(
+    "kr-inserter-parts",
+    "casting-kr-inserter-parts",
+    util.sub_icons(data.raw.item["kr-inserter-parts"].icon, data.raw.fluid["se-molten-iron"].icon)
+)
+
+util.update_casting_recipe(
+    "kr-automation-core",
+    "casting-kr-automation-core",
+    util.sub_sup_icons(data.raw.item["kr-automation-core"].icon, data.raw.fluid["se-molten-iron"].icon, data.raw.fluid["se-molten-copper"].icon)
+)

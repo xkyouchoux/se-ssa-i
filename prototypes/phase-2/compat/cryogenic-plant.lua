@@ -1,7 +1,5 @@
 local util = require("__se-ssa-i__.data_util")
 
-local Krastorio2 = mods["Krastorio2"]
-
 data.raw.item["cryogenic-plant"].order = "e[chemical-plant]-a[cryogenic-plant]"
 data.raw.item["cryogenic-plant"].subgroup = "chemistry"
 data.raw.item["cryogenic-plant"].stack_size = 10
@@ -14,7 +12,7 @@ data.raw.recipe["cryogenic-plant"].ingredients = {
     {type = "item", name = "chemical-plant", amount = 1},
     {type = "item", name = "processing-unit", amount = 8},
     {type = "item", name = "steel-plate", amount = 20},
-    {type = "item", name = Krastorio2 and "kr-glass" or "glass", amount = 16}
+    {type = "item", name = util.get_glass(), amount = 16}
 }
 
 data.raw.technology["cryogenic-plant"].prerequisites = {"space-science-pack"}
