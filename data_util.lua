@@ -49,6 +49,7 @@ function result.set_category_for_recipes(category, recipes)
 end
 
 function result.sub_sup_icons(icon_main, icon_left, icon_right)
+
     local results = {{ icon = icon_main, shift = {2, 0}, icon_size = 64 }}
     table.insert(results, { icon = icon_left.icon or icon_left,
                                 scale = icon_left.scale or 0.20,
@@ -88,6 +89,8 @@ end
 -- 500 molten iron + 8 coal -> 1 steel ingot
 -- 1 steel ingot -> 10 steel plate - 1:.75 / foundry - 1:.9
 
+-- titanium (24 ore = 900 molten)
+
 -- K2SE
 
 -- copper & iron
@@ -98,6 +101,10 @@ end
 
 -- 700 molten + 6 coke -> 2 steel ingot
 -- 1 steel ingot -> 10 steel plate - 1 iron ore -> .89 steel plate /foundry -  1:1.07 
+
+-- titanium (36 ore = 750 molten) (750 molten = 15 plates) (1 plate = 50 molten)
+
+
 
 function result.get_glass()
     return mods["Krastorio2"] and "kr-glass" or "glass"
@@ -117,6 +124,10 @@ end
 
 function result.get_iron_cost_for_steel(plates)
     return mods["Krastorio2"] and (plates * 35) or (plates * 50)
+end
+
+function result.get_titanium_cost(plates)
+    return plates * 50
 end
 
 

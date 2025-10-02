@@ -13,6 +13,7 @@
     "um-standalone-cryogenic-plant",
     "? Krastorio2 >= 2.0.8",
     "? TurboBelt",
+    "? bztitanium",
     "! space-age"],
   "space_travel_required": true,
   "freezing_required": true,
