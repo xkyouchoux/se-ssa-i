@@ -14,43 +14,60 @@ data.raw.recipe["foundry"].ingredients = {
 data.raw.technology["foundry"].prerequisites = {"se-heavy-composite", "se-aeroframe-bulkhead"}
 data.raw.technology["foundry"].order = "e-g"
 
-util.tech_remove_effects("foundry", {
+data.raw.technology["foundry"].effects = {
     {
         type = "unlock-recipe",
-        recipe = "iron-ore-melting"
+        recipe = "foundry"
     },
     {
         type = "unlock-recipe",
-        recipe = "copper-ore-melting"
+        recipe = "casting-se-steel-ingot"
     },
     {
         type = "unlock-recipe",
-        recipe = "casting-iron"
+        recipe = "casting-pipe"
     },
     {
         type = "unlock-recipe",
-        recipe = "casting-copper"
+        recipe = "casting-pipe-to-ground"
     },
     {
         type = "unlock-recipe",
-        recipe = "casting-steel"
+        recipe = "casting-copper-cable"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-iron-gear-wheel"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-iron-stick"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-barrel"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-motor"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-engine-unit"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-low-density-structure"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "casting-se-material-testing-pack"
+    },
+    {
+        type = "unlock-recipe",
+        recipe = "concrete-from-molten-iron"
     }
-})
-
-local recipes = {
-    "casting-se-steel-ingot",
-    "casting-barrel",
-    "casting-motor",
-    "casting-engine-unit",
-    "casting-se-material-testing-pack"
 }
-
-for _,recipe in pairs(recipes) do
-    table.insert(data.raw.technology["foundry"].effects, {
-        type = "unlock-recipe",
-        recipe = recipe
-    })
-end
 
 data.raw.recipe["casting-pipe"].ingredients = {
     {type = "fluid", name = "se-molten-iron", amount = util.get_iron_cost(1), fluidbox_multiplier = 10},

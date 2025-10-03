@@ -4,6 +4,4 @@ require("prototypes.phase-3.compat.electromagnetic-plant")
 require("prototypes.phase-3.compat.cryogenic-plant")
 require("prototypes.phase-3.compat.stack-inserters")
 require("prototypes.phase-3.compat.quality")
-
 require("prototypes.phase-3.compat.Krastorio2")
-require("prototypes.phase-3.compat.bztitanium")
