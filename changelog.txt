@@ -1,3 +1,9 @@
+Version: 1.2.2
+Date: 1 October 2025
+  Changes:
+    - Moved stack inserters from biological and astronomic science 1 to utility science
+    - Moved turbo belts from material science 2 to material science 1 and they require iridium plates instead of heavy bearings
+---------------------------------------------------------------------------------------------------
 Version: 1.2.1
 Date: 1 October 2025
   Changes:
