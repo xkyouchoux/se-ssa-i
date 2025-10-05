@@ -29,7 +29,7 @@ data:extend({
             {type = "fluid", name = "se-molten-iron", amount = util.get_iron_cost_for_steel(5), fluidbox_multiplier = 10},
         },
         allow_decomposition = false,
-        results = {{type = "item", name = "kr-steel-pipe", amount = 2}},
+        results = {{type = "item", name = "kr-steel-pipe-to-ground", amount = 2}},
         allow_productivity = false
     },
     {

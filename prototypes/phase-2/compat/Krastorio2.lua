@@ -51,3 +51,8 @@ data.raw.recipe["casting-se-material-testing-pack"].ingredients = {
     {type = "item", name = "kr-rare-metals", amount = 1},
     {type = "item", name = "kr-lithium-chloride", amount = 1},
 }
+
+data.raw.recipe["casting-se-steel-ingot"].results[1].amount = 2
+data.raw.recipe["casting-se-steel-ingot"].ingredients = {
+    {type = "fluid", name = "se-molten-iron", amount = 700, fluidbox_multiplier = 10},
+}
