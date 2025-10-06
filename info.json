@@ -1,9 +1,9 @@
 {
   "name": "se-ssa-i",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "title": "Space Exploration-Standalone Space Age content integration",
   "author": "xkyouchoux",
-  "description": "Has support for stack inserters, turbo belts, foundry, electromagnetic plant, and cryogenic plant. Requires space exploration and has support for krastorio2",
+  "description": "Has support for stack inserters, foundry, electromagnetic plant, and cryogenic plant. Requires space exploration and has support for krastorio2",
   "dependencies": [
     "base >= 2.0.0",
     "space-exploration >= 0.7.25",
@@ -12,6 +12,7 @@
     "um-standalone-electromagnetic-plant",
     "um-standalone-cryogenic-plant",
     "? Krastorio2 >= 2.0.8",
+    "? TurboBelt",
     "! space-age"],
   "space_travel_required": true,
   "freezing_required": true,

@@ -1,3 +1,14 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.2.5
+Date: 6 October 2025
+  Fixes:
+    - Fixed changelog not showing up in game
+---------------------------------------------------------------------------------------------------
+Version: 1.2.4
+Date: 6 October 2025
+  Fixes:
+    - Added optional dependency to TurboBelt mod for turbo belt changes.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.3
 Date: 4 October 2025
   Fixes:

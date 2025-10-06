@@ -1,4 +1,4 @@
-if data.raw.item["turbo-transport-belt"] then
+if mods["TurboBelt"] then
     data.raw.item["turbo-transport-belt"].subgroup = "transport-belt"
     data.raw.item["turbo-underground-belt"].subgroup = "underground-belt"
     data.raw.item["turbo-splitter"].subgroup = "splitter"
