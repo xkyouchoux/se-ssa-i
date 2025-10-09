@@ -1,13 +1,31 @@
-require("prototypes.phase-1.recipe-category")
-require("prototypes.phase-1.recipe")
+if settings.startup["sessai-legacy-mode"].value then
+    data.raw.recipe["cryogenic-plant"].ingredients = {
+        {type = "item", name = "refined-concrete", amount = 10},
+        {type = "item", name = "chemical-plant", amount = 1},
+        {type = "item", name = "processing-unit", amount = 8},
+        {type = "item", name = "steel-plate", amount = 20},
+        {type = "item", name = mods["Krastorio2"] and "kr-glass" or "glass", amount = 16}
+    }
 
-require("prototypes.phase-1.compat.Krastorio2")
+    data.raw.recipe["electromagnetic-plant"].ingredients = {
+        {type = "item", name = "se-holmium-solenoid", amount = 38},
+        {type = "item", name = "se-aeroframe-bulkhead", amount = 24},
+        {type = "item", name = "se-quantum-processor", amount = 24},
+        {type = "item", name = "refined-concrete", amount = 48},
+        {type = "item", name = "assembling-machine-3", amount = 1}
+    }
 
-data.raw.fluid["molten-iron"] = nil
-data.raw.fluid["molten-copper"] = nil
+    data.raw.recipe["foundry"].ingredients = {
+        {type = "item", name = "se-heavy-composite", amount = 16},
+        {type = "item", name = "processing-unit", amount = 8},
+        {type = "item", name = "se-casting-machine", amount = 1},
+        {type = "item", name = "se-aeroframe-bulkhead", amount = 16},
+        {type = "fluid", name = "lubricant", amount = 80}
+    }
 
-data.raw.recipe["iron-ore-melting"] = nil
-data.raw.recipe["copper-ore-melting"] = nil
-data.raw.recipe["casting-iron"] = nil
-data.raw.recipe["casting-copper"] = nil
-data.raw.recipe["casting-steel"] = nil
+    data.raw.recipe["stack-inserter"].ingredients = {
+        {type = "item", name = "low-density-structure", amount = 1},
+        {type = "item", name = "processing-unit", amount = 1},
+        {type = "item", name = "bulk-inserter", amount = 1},
+    }
+end
