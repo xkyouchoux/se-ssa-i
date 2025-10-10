@@ -6,7 +6,7 @@
         {
             "label": "fpackage",
             "type": "shell",
-            "command": "python fpackage.py \"%APPDATA%\\Factorio\\mods\"",
+            "command": "python fpackage.py \"%FACTORIO_LOCATION%\\mods\"",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
