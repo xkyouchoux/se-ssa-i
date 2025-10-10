@@ -1,9 +1,9 @@
 {
   "name": "se-ssa-i",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "title": "Space Exploration Integration: Space Age",
   "author": "xkyouchoux",
-  "description": "Currently adds stack inserters, belt stacking, cryogenic plant, electromagnetic plant, and foundry to space exploration. Has support for Krastorio 2.",
+  "description": "Currently adds stack inserters, belt stacking, cryogenic plant, electromagnetic plant, foundry, and biochamber to space exploration. Has support for Krastorio 2.",
   "dependencies": [
     "base >= 2.0.0",
     "space-exploration >= 0.7.25",
@@ -12,6 +12,7 @@
     "sei-cryogenic-plant",
     "sei-electromagnetic-plant",
     "sei-foundry",
+    "? sei-biochamber",
     "? sei-turbo-belts",
     "? Krastorio2 >= 2.0.8",
     "! space-age"],
