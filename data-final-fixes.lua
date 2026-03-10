@@ -25,3 +25,14 @@ if settings.startup["sessai-legacy-mode"].value then
         {"se-material-science-pack-3", 1},
     }
 end
+
+if mods["se-molten-glass"] then
+    data:extend({
+        {
+            type = "item-subgroup",
+            name = "vulcanus-processes",
+            group = "intermediate-products",
+            order = "a-da"
+        }
+    })
+end
